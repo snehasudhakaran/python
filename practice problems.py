@@ -520,7 +520,7 @@ while True :
         print("lcm", high)
         break
     else:
-        high=high+1
+        high=high+value
 dict={
     "name":"sneha",
     "age":78
@@ -573,3 +573,200 @@ x=3
 y=7
 print((x*y)*(x+y))
 print((x*x*y)+(y*y*x))
+
+print('------------------------write a function to list the first N prime numbers------------------------')
+
+# for i in range(2,20):
+    # for j in range(2,i):
+    #     if i%j==0:
+    #         continue
+    #     print()
+            
+print('---------------------write a function to sort a list of values--------------------')
+list=[5,3,2,4,1,6]
+
+for i in range(0,len(list)):
+    for j in range(i+1,len(list)):
+        if list[i]<=list[j]:
+            list[i],list[j]=list[j],list[i]
+print(list)
+        # print(list)
+print('-------------------reverse-----------------------')
+start=3
+end=7
+sneha=[10,20,30,40,50,60,70,80,90,100]     
+def sneha1(start,end,sneha):
+    while start<end:
+        sneha[start],sneha[end]= sneha[end],sneha[start]
+        start+=1
+        end-=1
+    return sneha
+print(sneha1(start,end, sneha))
+print("-----------------------------linear quation in two variables--------------------------")
+import numpy as np
+# a=5x+3y =35
+# x+y = 9
+'''
+  a=[
+      [5,3],
+      [1,1]
+  ]
+  b=[35,9]
+'''
+A=[[5,3],[1,1]]
+B=[35,9]
+x= np.linalg.solve(A,B)
+print(x)
+
+#5x+3y=35
+for x in range(1,6):
+    for y in range(1,11):
+        if 5*x + 3*y==35:
+            print("x",x,"y",y)
+#x+y=9
+
+for x in range(1,8):
+    for y in range(1,9):
+        if x+y==9:
+            print("x",x,"y",y)
+print('-------------------------------tic tac toe game--------------------')   
+board=[
+    [2,1,2],
+    [0,0,2],
+    [2,0,2]
+]        
+def check(player):
+    
+    for row in board:
+        if row.count(player)==3:
+            return True
+    s=[0,1,3]
+    for col in s:
+        if board[0][col]==player and board[1][col] and board[2][col]:
+            return True
+        if board[0][0]==player and board[1][1] and board[2][1]:
+            return True
+        if board[0][2]==player and board[1][1] and board[2][0]:
+            return True
+        return False
+if check(1):
+    print("1 won")
+elif check(2):
+    print("2 won")
+elif check(0):
+    print("no one own")
+else:
+    print("wrong")
+
+
+print('------------------------------gcd-------------------------')
+def gcd(a,b):
+    if b==0:
+        return a 
+    else: 
+        return (gcd(b,a%b))
+GCD =gcd(12,16)
+print(GCD)
+
+n1=8
+n2 =7
+if n1>n2:
+    small =n2
+else:
+    small= n1
+while  small>=1 :
+    if n1%small==0 and n2% small==0:
+        print("HCF" ,small)
+    small = small-1
+    
+print("---------------------lcm---------------------")
+n1=2
+n2=4
+if n1>n2:
+    high=n1
+else:
+    high=n2
+value = high
+while True :
+    if high%n1==0 and high %n2==0:
+        print("lcm", high)
+        break
+    else:
+        high=high+value
+print('------------------------how to compute the future value of rate of interest and  a number of years in python----------------')
+amt=10000
+int=3.6
+years=7
+interest= amt*((1+(0.01*int))**years)
+print(round(interest))
+print("-----------------------------compare the triplets---------------")
+a=[2,4,6,8,2]
+b=[3,7,1,4,1]
+alice=bob=0
+for i in range(len(a)):
+    if a[i]>b[i]:
+        alice+=1
+    else:
+        bob+=1
+print(alice, bob)
+print("-----------------------write a function to multiply two matrics-----------------")
+a=[
+    [1,2,4],
+    [4,5,4],
+    [6,7,8]
+]
+b=[
+    [3,4,4],
+    [4,6,4],
+    [6,7,8]
+]
+c=[
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+]
+
+for i in range(len(a)):
+    for j in range(len(b[0])):
+        for k in range(len(b)):
+            c[i][j]+=a[i][k]*b[k][j]
+print(c)
+
+print("------------------------------addition and sub for two matrix--------------------")
+a=[[1,2],[3,5]]
+b=[[4,2],[5,3]]
+c=[[0,0],[0,0]]
+for i in range(len(a)):
+    for j in range(len(b)):
+        c[i][j]+=a[i][j] +b[i][j]
+print(c)
+
+a=[[1,2],[3,5]]
+b=[[4,2],[5,3]]
+c=[[0,0],[0,0]]
+for i in range(len(a)):
+    for j in range(len(b)):
+        c[i][j]+=a[i][j] -b[i][j]
+print(c)
+
+print("-------------------------file handling-----------------------")
+# with open("python.txt","a+") as f:
+#     f.seek(0)
+#     s=f.read()
+#     ss= s.replace("cows","ducks")
+#     mm =ss.replace("moo","qucks")
+#     f.write(mm)
+# n=23.4555
+# print("%3.1f"%n)
+
+print("-------------------------brithday------------------------------------")
+arr=[1,3,2,5,4,5,5]
+def brithDayCandles(arr):
+    for i in range(0,len(arr)):
+        for j in range(i+1,len(arr)):
+            if arr[i]>=arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+    max=arr[-1]
+    return arr.count(max)
+print(brithDayCandles(arr))
+
