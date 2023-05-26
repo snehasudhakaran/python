@@ -83,3 +83,48 @@ for i in range(1,5):
     sum+=arr[i]
 print(sum)
 
+from practice2 import nm
+
+nm()
+
+print("-------check palindrome------------------")
+import math
+n=7
+def perfect(x):
+    s=int(math.sqrt(x))
+    return s*s==x
+ 
+result1 = 5*(n*n)+4      
+result2 = 5*(n*n)-4 
+if perfect(result1) or perfect(result2):
+    print(n,"palindrome")
+else:
+    print(n,"not a palidrome")
+    
+print("-----------------------num palindrome---------------")
+
+num=77
+per = num
+while True:
+    num_str = str(num)
+    rev_str = num_str[::-1]
+    if num_str == rev_str:
+        print(num, "is palidrome",per)
+        break
+    num=int(num_str)+int(rev_str)
+    
+print("---------string-----------------------")
+
+string="hello world"
+while string:
+    string=string[1::2]
+    
+print(string)
+
+print("--------------------gcd-----------------")
+def func(a,b):
+    if b==0:
+        return a
+    else:
+        return func(b,a%b)
+print(func(2,6))

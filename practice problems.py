@@ -770,3 +770,320 @@ def brithDayCandles(arr):
     return arr.count(max)
 print(brithDayCandles(arr))
 
+print("----------------------------gcd and coprime---------------------------")
+a=3
+b=5
+def gcd(a,b):
+    if b==0:
+        return a 
+    else:
+        return gcd(b,a%b)
+    
+    
+if gcd(a,b)==1:
+    print(a,b,"are coprime")
+else:
+    print(a,b,"are not coprime")
+    
+print(gcd(3,5))
+
+print(math.gcd(8,2))
+
+print("--------------------guess the output----------------")
+p=(1,3)
+q=0
+r=[]
+
+if p or q and r :
+    print("true")
+else:
+    print("false")
+    
+print("-------------sort--------------------")
+
+arr=[1,2,5,2,5,6,9,2,15,23,56,1,2,3]
+
+
+for i in range(0,len(arr)):
+    for j in range(i+1,len(arr)):
+        if arr[i]>=arr[j]:
+            arr[i],arr[j]=arr[j],arr[i]
+            
+print(arr)
+
+print("--------------------------------")
+
+arr=["abc","123"]
+
+# for i in arr:
+#     print(i)
+#     arr.append(i)
+# print(arr)
+
+print("------------------------leap year----------------------------")
+year=2001
+if year%4==0:
+    if year%100==0:
+        if year%400==0:
+            print("it's leap year")
+        else:
+            print("it;s not a leap year")
+    else:
+        print("leap year")
+else:
+    print("not a leap year")
+
+print("---------------------how to find -ve and +ve------------------------")
+
+n=-5
+if n>0:
+    print("positive")
+elif n==0:
+    print("neither +ve nor -ve")
+else:
+    print("-ve")
+    
+print("--------------------------------------------------------")
+arr=[4,29,9,7,1,3,9,7]
+k=4
+
+arr.sort()
+for i in range(k-1):
+    arr.remove(max(arr))
+print(max(arr))
+
+print("-----------------------captial index-------------------------------------")
+up=[]
+def captial_index(x):
+    for i in range(len(x)):
+        if x[i].isupper():
+            up.append(i)
+captial_index("HeLlO")
+print(up)
+
+print("--------------middle letter-------------------------------")
+
+def middle(x):
+    mid=len(x)//2
+    if len(x)%2==0:
+        return "*"
+    else:
+        return x[mid]
+print(middle("sneh"))
+
+print("-----------------------------lambda--------------------------------")
+
+x= lambda a : a+2 
+print(x(6))
+
+print("----------------------------walrus operator----------------------------------")
+print(name:="sneha")
+
+# up=[]
+# while not (inpt:=input("enter num")) == "z" :
+#     up.append(inpt)
+# print(up)
+
+print("---------higher order functions--------------------")
+def cal_down():
+    print("calm down")
+    
+def happy():
+    print("happy")
+    
+def sad():
+    print("crying")
+    
+def feeling(func):
+    func()
+    cal_down()
+    
+feeling(happy)
+feeling(sad)
+joy=happy
+joy()
+
+print("-----------------------------------------sort------------------------------")
+
+items=[(3456,"shoes",780),(3566,"phone",2500),(2587,"book",450),(544712,"pen",75)]
+items1=sorted(items,key=lambda items:items[1])
+print(items1)
+
+    
+print("---------------higher order function---------------------------------")
+print("---------------------matrix add sub mul-----------------------------")
+
+a=[[1,2],[3,4]]
+b=[[2,1],[2,6]]
+
+c=[[0,0],[0,0]]
+
+for i in range(len(a)):
+    for j in range(len(b)):
+        c[i][j]+=a[i][j]+b[i][j]
+print(c)
+
+a=[[1,2],[3,4]]
+b=[[2,1],[2,6]]
+
+c=[[0,0],[0,0]]
+for i in range(len(a)):
+    for j in range(len(b)):
+        c[i][j]=a[i][j]-b[j][i]
+print(c)
+
+a=[[1,2],[3,4]]
+b=[[2,1],[2,6]]
+
+c=[[0,0],[0,0]]
+for i in range(len(a)):
+    for j in range(len(b[0])):
+        for k in range(len(b)):
+            c[i][j]+=a[i][k] * b[k][j]
+            
+print(c)
+
+print("------------------------------matrix transpose------------------------")
+a=[
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+b=[
+    [10,11,12],
+    [13,14,15],
+    [16,17,18]
+]
+c=[
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+]
+for i in range(len(a)):
+    for j in range(len(a)):
+        a[i][j]=a[j][i]
+        
+print(a)
+
+print("-----------------------bubble sorting----------------------------------")
+
+array=[3,6,2,16,42,1,3,5,4]
+
+for i in range(0,len(array)):
+    for j in range(i+1,len(array)):
+        if array[i]>array[j]:
+            array[i], array[j]=array[j],array[i]
+print(array)
+print("---------------validate date-----------------------")
+month=12
+day=33
+year=2014
+
+if month==1 or month==3 or month==5 or month==7 or month==8 or month==10 or month==12:
+    max_days=31
+elif month==11 or month==4 or month==6 or month==9 :
+    max_days=30
+elif year%4==0 and year%100!=0 or year%400==0:
+    max_days=29
+else:
+    max_days=28
+    
+if month<1 or month>12:
+    print("invalid month")
+elif day<1 or day>max_days:
+    print("invalid day")
+else:
+    print("valid date")
+    
+print("-----------------------flames--------------")
+
+name1="Sneha"
+name2=" vikram"
+
+name1=name1.lower().replace(" ","")
+name2=name2.lower().replace(" ","")
+
+print(name1)
+print(name2)
+
+for i in name1:
+    for j in name2:
+        if i==j:
+            name1=name1.replace(j,"")
+            name2=name2.replace(j,"")
+            
+print(name1)
+print(name2)
+
+join = len(name1)+len(name2)
+print(join)
+
+print("------------------------------characters--------------------")
+
+string="Sneha Sudhakaran is girl"
+
+n=4
+if n==1:
+    print(string.upper())
+elif n==2:
+    print(string.lower())
+elif n==3:
+    print(string.capitalize())
+elif n==4:
+    print(string.title())
+elif n==5:
+    print(string.swapcase())
+    
+n=5
+
+for i in range(n):
+    # k=ord("A")+i
+    k=ord("A")+i
+    for j in range(i+1):
+        print(chr(k),end=" ")
+        # k=k+1
+    print()
+    
+print("------------------------practice------------------------------")
+list1={"name":"sneha","age":20,"clg":"Dr. MGR"}
+dict={key:val for key,val in list1.items()}
+print(dict)
+        
+print(list1 is not dict)
+
+# items=("phone","tv")
+# price=(25000,30000)
+# dj=list(zip(items,price))
+# print(dj)
+
+print("------------------multithreading----------------------------")
+# import threading
+# import time
+# print(threading.active_count())
+# print(threading.enumerate())
+
+# def update():
+#     print("updating")
+#     time.sleep(9)
+#     print("updated")
+
+# threadd= threading.Thread(target=update)
+# threadd.start()
+# for i in range(100):
+#     print(i)
+# threadd.join()
+# print("bye")
+
+print("------------------------patterns---------------------------")
+
+n=7
+s=[k for k in range(1,8)]
+for i in range(n):
+    for j in range(n):
+        if i==j or i+j==n-1:
+            print(s[j],end="")
+        else:
+            print(" ",end="")
+    print()
+# 
+
